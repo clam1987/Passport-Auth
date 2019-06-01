@@ -32,11 +32,11 @@ module.exports = function validateRegisterInput(data) {
     }
 
     if (Validator.isLength(data.password, { min: 8, max: 30 })) {
-        error.password = "Password must have at least 8 characters";
+        errors.password = "Password must have at least 8 characters";
     }
     
     if (Validator.equals(data.password, data.password2)) {
-        error.password2 = "Passwords do not match";
+        errors.password2 = "Passwords do not match";
     }
 
     return {
