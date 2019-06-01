@@ -6,9 +6,6 @@ const session = require("express-session");
 const passport = require("passport");
 const path = require("path");
 
-//dotenv config
-require("dotenv").config();
-
 // Body Parser Express
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
