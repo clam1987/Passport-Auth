@@ -17,9 +17,10 @@ const users = require("./routes/users");
 const db = require("./config/connection").mongoURI;
 
 // Connecting to MonGod
-mongoose.connect(db, { useNewUrlParser: true })
-.then(() => console.log("You've connected to the MonGod"))
-.catch(err => console.log(err));
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("You've connected to the MonGod"))
+  .catch(err => console.log(err));
 
 // Passport MiddleWare
 app.use(passport.initialize());
@@ -29,6 +30,11 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/users", users);
+
+// React Route
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public/index.html'))
+})
 
 // Connection to the localhost
 app.listen(PORT, function() {
