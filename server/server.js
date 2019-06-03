@@ -6,6 +6,9 @@ const session = require("express-session");
 const passport = require("passport");
 const path = require("path");
 
+//dotenv config
+require("dotenv").config();
+
 // Body Parser Express
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -33,7 +36,7 @@ app.use("/users", users);
 
 // React Route
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'))
+  res.sendFile(path.join(__dirname, '"../passport-auth/public/index.html"'));
 })
 
 // Connection to the localhost

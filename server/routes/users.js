@@ -11,6 +11,9 @@ const validateLoginInput = require("../controllers/login");
 // Load User Model
 const User = require("../models/User");
 
+//Routers
+router.use(express.urlencoded({ extended: true }))
+
 // Sign up Users
 router.post("/account/register", (req, res) => {
   // Form Validation

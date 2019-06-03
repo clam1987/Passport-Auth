@@ -84,8 +84,7 @@ class Login extends Component {
               </div>
               <div className="input-field col s12">
                 <input
-              
-              onChange={this.onChange}
+                  onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
@@ -99,6 +98,20 @@ class Login extends Component {
                   {errors.password}
                   {errors.passwordincorrect}
                 </span>
+                <div>
+                <button
+                  style={{
+                    width: "150px",
+                    borderRadius: "3px",
+                    letterSpacing: "1.5px",
+                    marginTop: "1rem"
+                  }}
+                  type="submit"
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                >
+                  Log In
+                </button>
+                </div>
               </div>
             </form>
           </div>
